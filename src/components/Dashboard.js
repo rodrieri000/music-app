@@ -8,13 +8,23 @@ class Dashboard extends Component {
   constructor(props) {
 		super(props);
 		this.state = {
+      online: true
     };
   }
+
+  toggleOnline = () => {
+    this.setState({
+      online: !this.state.online
+    });
+  }
+
+
+
 	render() {
     return(
       <div>
         <Navbar />
-        <Cards />
+        <Cards toggleOnline={this.toggleOnline} />
         <Cards />
         <Cards />
       </div>
