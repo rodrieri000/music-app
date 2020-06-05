@@ -32,7 +32,7 @@ export default function OnlineModeCard(props) {
     <Box display="inline-block" justifyContent="center" padding="60px" height="150px" width="320px">
 
     <Card className={classes.root}>
-      <CardContent flexDirection="row">
+      <CardContent>
         <Typography className={classes.title} color="textPrimary" gutterBottom>
           Online Mode
         </Typography>
@@ -47,8 +47,9 @@ export default function OnlineModeCard(props) {
         </Typography> */}
       </CardContent>
       <CardActions>
+      
         <Switch onChange={props.toggleOnline} />
-        {/* <Button size="small">Learn More</Button> */}
+       
       </CardActions>
     </Card>
     </Box>
