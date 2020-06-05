@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Cards(props) {
+export default function OnlineModeCard(props) {
   const classes = useStyles();
 
   return (
@@ -36,17 +36,15 @@ export default function Cards(props) {
         <Typography className={classes.title} color="textPrimary" gutterBottom>
           Online Mode
         </Typography>
-        <Typography variant="h5" component="h2">
-
-        </Typography>
+        
         <Typography className={classes.pos} color="textSecondary">
           Is this application connected to the internet?
          
         </Typography>
-        <Typography variant="body2" component="p">
+        {/* <Typography variant="body2" component="p">
         
           <br />
-        </Typography>
+        </Typography> */}
       </CardContent>
       <CardActions>
         <Switch onChange={props.toggleOnline} />

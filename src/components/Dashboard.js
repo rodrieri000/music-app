@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
 import {} from '@material-ui/core'
 import Navbar from './Navbar'
-import Cards from './Cards'
+import OnlineModeCard from './OnlineModeCard'
+import MasterVolumeCard from './MasterVolume'
 
 
 class Dashboard extends Component {
   constructor(props) {
 		super(props);
 		this.state = {
-      online: true
+      online: true,
+      volume: 20
     };
   }
 
@@ -18,15 +20,21 @@ class Dashboard extends Component {
     });
   }
 
+  changeVolume = (x) => {
+    this.setState({
+      volume: x
+    });
+  }
+
 
 
 	render() {
     return(
       <div>
         <Navbar />
-        <Cards toggleOnline={this.toggleOnline} />
-        <Cards />
-        <Cards />
+        <OnlineModeCard toggleOnline={this.toggleOnline} />
+        <MasterVolumeCard changeVolume={this.changeVolume} />
+
       </div>
     )
   }
