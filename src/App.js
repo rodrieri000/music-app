@@ -2,15 +2,12 @@ import React, {Component} from 'react';
 import './App.css';
 import {Button, TextField} from '@material-ui/core'
 import Dashboard from './components/Dashboard'
-import NavBar from './components/Navbar'
+import NavBar from './components/Navbar';
+import Header from './components/Header';
+import { makeStyles } from '@material-ui/core/styles';
 
-// function() {
-//     return (
-//       <NavBar/>
-//     )  
-// }
 
-class App extends Component {
+class App extends Component {  
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -32,38 +29,37 @@ class App extends Component {
   } 
 
   render() {
+    
     if (this.state.isLoggedIn) {
       return <Dashboard />
     } else {
       return (
-          // the code for your login screen
+          // the code for your login screen          
           <div className="App">
-          <NavBar/>
-          <form onSubmit={this.handleSubmit}>
-            <TextField>
-              Username
-            </TextField>
-            <br/>
-            <TextField>
-              Password
-            </TextField>
-            <br/>
-          </form>
-          <Button onClick={this.handleChange}>
-            Login
-          </Button>
-
-        </div>
-        
+          <NavBar />
+          <Header />
+          <div className="Sign-In">
+            <form onSubmit={this.handleSubmit}>
+              <TextField  placeholder="Email">
+                Username
+              </TextField>
+              <br/>
+              <TextField placeholder="Password">
+                Password
+              </TextField>
+              <br/>
+            </form>
+            <Button onClick={this.handleChange}>
+              Login
+            </Button>
+          </div>
+        </div>        
       )
     }
   }
+}
 
-  
-  
-   
-    
-  }
+
 
 
 export default App;
