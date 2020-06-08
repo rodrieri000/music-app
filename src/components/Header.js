@@ -6,11 +6,11 @@ const useStyles = makeStyles((theme) => ({
   header: {
     color: '#34b0ba', 
     fontSize: "80px",
-    letterSpacing: "-1.5px", 
+    letterSpacing: "-2px", 
     position: "absolute",
     marginLeft: "125px", 
     marginTop: "50px",
-    textShadow: "1.5px 1.5px #326b70",
+    textShadow: "1px 1px #326b70",
     textAlign: "center"
   }
 }));
