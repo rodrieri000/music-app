@@ -5,11 +5,11 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   header: {
     color: '#34b0ba', 
-    fontSize: "70px",
+    fontSize: "80px",
     letterSpacing: "-1.5px", 
     position: "absolute",
     marginLeft: "125px", 
-    marginTop: "70px",
+    marginTop: "50px",
     textShadow: "1.5px 1.5px #326b70",
     textAlign: "center"
   }

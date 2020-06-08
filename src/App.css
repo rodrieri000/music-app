@@ -6,10 +6,20 @@
 }
 
 .Sign-In {
+  border-radius: 10px;
+  padding: 30px;
+  height: 120px;
+  width: 180px;
+  background-color: #34b0ba;
   color: white;
   position: absolute;
-  margin-top: 350px;
-  margin-left: 250px;
+  margin-top: 330px;
+  margin-left: 260px;
+}
+
+.Sign-In Button {
+  padding: 20px;
+  margin-left: 40px;
 }
 /* 
 .App-logo {

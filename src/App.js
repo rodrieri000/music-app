@@ -4,7 +4,7 @@ import {Button, TextField} from '@material-ui/core'
 import Dashboard from './components/Dashboard'
 import NavBar from './components/Navbar';
 import Header from './components/Header';
-import { makeStyles } from '@material-ui/core/styles';
+import GenreCard from './components/GenreCards';
 
 
 class App extends Component {  
@@ -49,10 +49,11 @@ class App extends Component {
               </TextField>
               <br/>
             </form>
-            <Button onClick={this.handleChange}>
+            <Button onClick={this.handleChange} size="large">
               Login
             </Button>
           </div>
+          <GenreCard />
         </div>        
       )
     }
