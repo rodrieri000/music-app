@@ -48,7 +48,9 @@ export default function OnlineModeCard(props) {
       </CardContent>
       <CardActions>
       
-        <Switch onChange={props.toggleOnline} />
+        <Switch checked={props.online}
+        onChange={props.toggleOnline}   
+        />
        
       </CardActions>
     </Card>
