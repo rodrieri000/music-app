@@ -45,15 +45,19 @@ class Dashboard extends Component {
     this.setState({
       volume: x,
     });
-    if (x < 80) {
+    // If volume is too loud, add the notification
+    if (x > 80) {
+      // But only if it isn't already added in our notifications (avoid duplicates)
+      if (!this.state.notifications.includes(volumeNotification)) {
+        this.setState({
+          notifications: [...this.state.notifications, volumeNotification]
+        });
+      }
+    } else {
+      // Otherwise, if its not too loud, remove the notification
       this.setState({
         notifications: this.state.notifications.filter(
-          (notification) => notification !== volumeNotification
-        ),  
-      });
-    } else {
-      this.setState({
-        notifications: [...this.state.notifications, volumeNotification],
+          notification => notification !== volumeNotification)
       });
     }
   };
