@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import {} from "@material-ui/core";
+// import Typography from '@material-ui/core/Typography';
 import Navbar from "./Navbar";
 import OnlineModeCard from "./OnlineModeCard";
 import MasterVolumeCard from "./MasterVolume";
 import QualitySelect from "./SoundQuality";
+import HomeTab from "./HomeTab";
+import '../App.css';
+import MusicPlayer from "./MusicPlayer";
+import Browse from "./Browse"
 
 const offlineNotification =
   "Your application is offline. You wont be able to share or stream music to other devices";
@@ -81,7 +85,7 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
         <Navbar />
         <OnlineModeCard
           toggleOnline={this.toggleOnline}
@@ -92,10 +96,17 @@ class Dashboard extends Component {
           changeQuality={this.changeQuality}
           quality={this.state.quality}
         />
-        <h2>System Notifications:</h2>
-        {this.state.notifications.map((notifications, index) => (
-          <div key={index}>{notifications}</div>
-        ))}
+        <HomeTab/>
+        <div className="Notifications">
+          <div className="NotificationsTitle">
+              Notifications
+          </div>
+            {this.state.notifications.map((notifications, index) => (
+              <div className="updates" key={index}>{notifications}</div>
+              ))}
+        </div>
+        <MusicPlayer/>
+        <Browse />
       </div>
     );
   }

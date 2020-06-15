@@ -1,8 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-// import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-// import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Card from '@material-ui/core/Card';
@@ -12,28 +10,46 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
-    root: {
-      minWidth: 275,
-    },
-    // bullet: {
-    //   display: 'inline-block',
-    //   margin: '0 2px',
-    //   transform: 'scale(0.8)',
-    // },
-    title: {
-      fontSize: 18
-    },
-    pos: {
-      marginBottom: 12,
-    },
-  });
+  box: {
+    display: "flex", 
+    flexDirection: "row", 
+    position: "absolute",
+    top: "480px", 
+    right: "20px"
+  },
+  root: {
+    height: "200px",
+    width: "250px",
+    backgroundColor: "#121212", 
+    color: "white"
+  },
+  bullet: {
+    display: 'row',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 18, 
+    color: "white"
+  },
+  pos: {
+    marginBottom: 20,
+    color: "white"
+  },
+  form: {
+    color: "white",
+  },
+  select: {
+    color: "white", 
+  }
+});
 
 export default function QualitySelect(props) {
   const classes = useStyles();
   
 
   return (
-    <Box display="inline-block" justifyContent="center" padding="60px" height="150px" width="320px">
+    <Box className={classes.box}>
    
    <Card className={classes.root}>
    <CardContent>
@@ -45,9 +61,8 @@ export default function QualitySelect(props) {
             </Typography>
         </CardContent>
         <CardActions>
-      <FormControl fullWidth>
-       
-        <Select onChange={e => props.changeQuality(e.target.value)} value={props.quality} >
+      <FormControl className={classes.form} fullWidth>       
+        <Select className={classes.select} onChange={e => props.changeQuality(e.target.value)} value={props.quality} >
           <MenuItem value={1}>Low</MenuItem>
           <MenuItem value={2}>Normal</MenuItem>
           <MenuItem value={3}>High</MenuItem>

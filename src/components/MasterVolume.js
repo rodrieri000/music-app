@@ -9,21 +9,32 @@ import Slider from '@material-ui/core/Slider';
 import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles({
-    root: {
-      minWidth: 275,
-      padding: 12,
-    },
-    // bullet: {
-    //   display: 'inline-block',
-    //   margin: '0 2px',
-    //   transform: 'scale(0.8)',
-    // },
-    title: {
-      fontSize: 18
-    },
-    pos: {
-      marginBottom: 12,
-    },
+  box: {
+    display: "flex", 
+    flexDirection: "row", 
+    position: "absolute",
+    top: "290px", 
+    right: "20px"
+  },
+  root: {
+    height: "180px",
+    width: "250px",
+    backgroundColor: "#121212", 
+    color: "white"
+  },
+  bullet: {
+    display: 'row',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 18, 
+    color: "white"
+  },
+  pos: {
+    marginBottom: 12,
+    color: "white"
+  },
   });
 
 export default function MasterVolumeCard(props) {
@@ -31,16 +42,15 @@ export default function MasterVolumeCard(props) {
   
 
   return (
-    <Box display="inline-block" justifyContent="center" padding="60px" height="150px" width="320px">
-
+    <Box className={classes.box}>
     <Card className={classes.root}>
         <CardContent>
         <Typography className={classes.title} color="textPrimary" gutterBottom>
           Master Volume
         </Typography>
-            <Typography className={classes.pos} color="textSecondary">
+        <Typography className={classes.pos} color="textSecondary">
                 Overrides all other sound settings in this application!
-            </Typography>
+        </Typography>
         </CardContent>
         <CardActions>
       <Slider
